@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyCOWGq-DtUUvN3Ssu41FZpGOX-TL3zaI9A",
-  authDomain: "sparky-tourist.firebaseapp.com",
-  projectId: "sparky-tourist",
-  storageBucket: "sparky-tourist.appspot.com",
-  messagingSenderId: "844222729380",
-  appId: "1:844222729380:web:2219d9924d83f0b2e92a31",
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_PROJECTID,
+  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_APPID,
 };
 
 export { firebaseConfig };

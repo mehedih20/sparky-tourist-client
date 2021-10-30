@@ -22,7 +22,7 @@ function App() {
         <Route path="/login">
           <Login />
         </Route>
-        <PrivateRoute path="/addBooking">
+        <PrivateRoute path="/addBooking/:id">
           <AddBooking />
         </PrivateRoute>
         <PrivateRoute path="/addTour">
