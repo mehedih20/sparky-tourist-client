@@ -7,7 +7,7 @@ const AllBooking = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const handleApprove = (id) => {
-    fetch(`http://localhost:5000/bookings/${id}`, {
+    fetch(`https://sheltered-bayou-10769.herokuapp.com/bookings/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())
@@ -20,7 +20,7 @@ const AllBooking = () => {
   };
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/bookings/${id}`, {
+    fetch(`https://sheltered-bayou-10769.herokuapp.com/bookings/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -33,7 +33,7 @@ const AllBooking = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/bookings")
+    fetch("https://sheltered-bayou-10769.herokuapp.com/bookings")
       .then((res) => res.json())
       .then((result) => {
         setAllBooking(result);

@@ -6,7 +6,7 @@ const MyBooking = () => {
   const [myBooking, setMyBooking] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { user } = useAuth();
-  const url = `http://localhost:5000/bookings/${user.email}`;
+  const url = `https://sheltered-bayou-10769.herokuapp.com/bookings/${user.email}`;
 
   useEffect(() => {
     fetch(url)

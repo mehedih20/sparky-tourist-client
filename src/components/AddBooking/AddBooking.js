@@ -29,7 +29,7 @@ const AddBooking = () => {
       price: tour.price,
       status: "pending",
     };
-    fetch("http://localhost:5000/bookings", {
+    fetch("https://sheltered-bayou-10769.herokuapp.com/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -47,7 +47,7 @@ const AddBooking = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/tours/${id}`)
+    fetch(`https://sheltered-bayou-10769.herokuapp.com/tours/${id}`)
       .then((res) => res.json())
       .then((result) => setTour(result));
   }, []);

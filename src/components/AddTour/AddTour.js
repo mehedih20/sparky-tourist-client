@@ -26,7 +26,7 @@ const AddTour = () => {
       price,
       duration,
     };
-    fetch("http://localhost:5000/tours", {
+    fetch("https://sheltered-bayou-10769.herokuapp.com/tours", {
       method: "POST",
       headers: {
         "content-type": "application/json",
