@@ -1,12 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { Container, Spinner } from "react-bootstrap";
+import { Container, Spinner, Button } from "react-bootstrap";
 import { useAuth } from "../../Context/authContext";
 
 const MyBooking = () => {
   const [myBooking, setMyBooking] = useState([]);
+  const [toggle, setToggle] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const { user } = useAuth();
   const url = `https://sheltered-bayou-10769.herokuapp.com/bookings/${user.email}`;
+
+  const handleDelete = (id) => {
+    const makeSure = window.confirm("Are you sure you want to delete");
+    if (makeSure) {
+      fetch(`https://sheltered-bayou-10769.herokuapp.com/bookings/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          if (result.acknowledged) {
+            setToggle(!toggle);
+          }
+        });
+    }
+  };
 
   useEffect(() => {
     fetch(url)
@@ -15,7 +31,8 @@ const MyBooking = () => {
         setMyBooking(result);
         setIsLoading(false);
       });
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [toggle]);
 
   return (
     <div>
@@ -57,6 +74,9 @@ const MyBooking = () => {
                     >
                       <span className="text-dark">Status</span>: {status}
                     </p>
+                    <Button variant="danger" onClick={() => handleDelete(_id)}>
+                      Delete
+                    </Button>
                   </div>
                 </div>
               );

@@ -20,16 +20,18 @@ const AllBooking = () => {
   };
 
   const handleDelete = (id) => {
-    fetch(`https://sheltered-bayou-10769.herokuapp.com/bookings/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        if (result.acknowledged) {
-          alert("Successfully removed!");
-          setToggle(!toggle);
-        }
-      });
+    const makeSure = window.confirm("Are you sure you want to delete");
+    if (makeSure) {
+      fetch(`https://sheltered-bayou-10769.herokuapp.com/bookings/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          if (result.acknowledged) {
+            setToggle(!toggle);
+          }
+        });
+    }
   };
 
   useEffect(() => {
