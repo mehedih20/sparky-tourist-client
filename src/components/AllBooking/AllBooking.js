@@ -46,18 +46,24 @@ const AllBooking = () => {
       <Container className="my-5">
         <h1 className="text-center mb-5">All Bookings</h1>
         {isLoading ? (
-          <Spinner animation="border" className="auth-spinner" variant="info" />
+          <div className="spinner-container">
+            <Spinner
+              animation="border"
+              className="tour-spinner"
+              variant="info"
+            />
+          </div>
         ) : (
           <div>
             {allBooking.map((booking) => {
               const { _id, name, email, destination, img, status, address } =
                 booking;
               return (
-                <div key={_id} className="d-flex p-2 border rounded shadow m-3">
-                  <div>
+                <div key={_id} className="booking shadow">
+                  <div className="booking-img">
                     <img src={img} className="img-fluid" alt={destination} />
                   </div>
-                  <div className="ms-3">
+                  <div className="booking-body">
                     <h4>{destination}</h4>
                     <p>{name}</p>
                     <p>{email}</p>

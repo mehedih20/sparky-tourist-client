@@ -1,3 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Architects+Daughter&family=Merienda&family=Satisfy&display=swap");
+/* ----------------------------------------------- */
+/* 
+font-family: 'Anonymous Pro', monospace;
+font-family: 'Architects Daughter', cursive;
+font-family: 'Merienda', cursive;
+font-family: 'Satisfy', cursive;
+ */
+
+/* ----------------------------------------------- */
+
 #root {
   display: flex;
   flex-direction: column;
@@ -8,4 +19,60 @@
   position: absolute;
   top: 50%;
   left: 50%;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+}
+
+.tour-spinner {
+  display: inline-block;
+}
+
+.booking {
+  display: flex;
+  border: 1px solid #8a8989;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.booking-img {
+  height: 200px;
+  width: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.booking-img img {
+  height: 100%;
+  width: auto;
+}
+
+.booking-body > p {
+  margin-bottom: 7px !important;
+}
+
+.booking-body h4 {
+  font-family: "Anonymous Pro", monospace;
+  color: #2f86a6;
+}
+
+@media (max-width: 650px) {
+  .booking-img {
+    height: 100px;
+  }
+}
+@media (max-width: 450px) {
+  .booking {
+    flex-direction: column;
+  }
+  .booking-img {
+    justify-content: flex-start;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 }

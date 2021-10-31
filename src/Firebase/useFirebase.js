@@ -27,6 +27,7 @@ const useFirebase = () => {
       }
       setLoading(false);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { user, setUser, googleSignIn, auth, loading };

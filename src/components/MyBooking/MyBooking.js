@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Button, Spinner } from "react-bootstrap";
+import { Container, Button, Spinner, Row, Col } from "react-bootstrap";
 import { useAuth } from "../../Context/authContext";
 
 const MyBooking = () => {
@@ -22,18 +22,24 @@ const MyBooking = () => {
       <Container className="my-5">
         <h1 className="text-center mb-5">My Booking</h1>
         {isLoading ? (
-          <Spinner animation="border" className="auth-spinner" variant="info" />
+          <div className="spinner-container">
+            <Spinner
+              animation="border"
+              className="tour-spinner"
+              variant="info"
+            />
+          </div>
         ) : (
           <div>
             {myBooking.map((booking) => {
               const { _id, name, email, destination, img, status, address } =
                 booking;
               return (
-                <div key={_id} className="d-flex p-2 border rounded shadow m-3">
-                  <div>
+                <div key={_id} className="booking">
+                  <div className="booking-img">
                     <img src={img} className="img-fluid" alt={destination} />
                   </div>
-                  <div className="ms-3">
+                  <div className="booking-body">
                     <h4>{destination}</h4>
                     <p>{name}</p>
                     <p>{email}</p>

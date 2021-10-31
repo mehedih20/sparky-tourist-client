@@ -1,0 +1,12 @@
+.login-container {
+  border-radius: 20px;
+  padding: 50px 0;
+  margin: 50px 0;
+  padding: 30px;
+  box-shadow: inset 0 0 1rem 0 rgba(0, 0, 0, 0.5);
+}
+
+.login-container h2 {
+  font-family: "Architects Daughter", cursive;
+  font-size: 35px;
+}

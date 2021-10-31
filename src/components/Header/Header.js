@@ -3,6 +3,7 @@ import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { useAuth } from "../../Context/authContext";
+import "./Header.css";
 
 const Header = () => {
   const { user, auth, setUser } = useAuth();
@@ -20,12 +21,12 @@ const Header = () => {
   return (
     <Navbar bg="light" variant="light" expand="lg">
       <Container className="py-3">
-        <Navbar.Brand as={Link} to="/">
-          Sparky Tours
+        <Navbar.Brand className="sparky-brand" as={Link} to="/">
+          Sparky <span className="text-success">Tourist</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
+          <Nav className="ms-auto sparky-nav">
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
@@ -46,7 +47,7 @@ const Header = () => {
             )}
 
             {user.displayName ? (
-              <Button variant="danger" className="ms-3" onClick={googleSignOut}>
+              <Button variant="danger" onClick={googleSignOut}>
                 Logout
               </Button>
             ) : (

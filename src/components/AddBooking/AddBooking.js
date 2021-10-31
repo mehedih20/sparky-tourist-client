@@ -53,69 +53,67 @@ const AddBooking = () => {
   }, []);
 
   return (
-    <div>
-      <Container className="my-5">
-        <h1 className="text-center">Add Booking</h1>
-        <Form className="w-75 mx-auto" onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formGroupEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control disabled type="email" value={user.email} />
+    <Container className="my-5">
+      <h1 className="text-center">Add Booking</h1>
+      <Form className="w-75 mx-auto" onSubmit={handleSubmit}>
+        <Form.Group className="mb-3" controlId="formGroupEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control disabled type="email" value={user.email} />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formGroupName">
+          <Form.Label>Your Name</Form.Label>
+          <Form.Control
+            disabled
+            type="text"
+            value={user.displayName}
+            placeholder="Enter name"
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formGroupNumber">
+          <Form.Label>Your number</Form.Label>
+          <Form.Control
+            required
+            type="text"
+            value={number}
+            onChange={(e) => setNumber(e.target.value)}
+            placeholder="Enter phone number"
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formGroupAddress">
+          <Form.Label>Your Home Address</Form.Label>
+          <Form.Control
+            required
+            type="text"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            placeholder="Enter address"
+          />
+        </Form.Group>
+        {tour.destination && (
+          <Form.Group className="mb-3" controlId="formGroupTour">
+            <Form.Label>Your Tour</Form.Label>
+            <Form.Control type="text" value={tour.destination} disabled />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formGroupName">
-            <Form.Label>Your Name</Form.Label>
-            <Form.Control
-              disabled
-              type="text"
-              value={user.displayName}
-              placeholder="Enter name"
-            />
+        )}
+        {tour.price && (
+          <Form.Group className="mb-3" controlId="formGroupPrice">
+            <Form.Label>Total Price</Form.Label>
+            <Form.Control type="number" value={tour.price} disabled />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formGroupNumber">
-            <Form.Label>Your number</Form.Label>
-            <Form.Control
-              required
-              type="text"
-              value={number}
-              onChange={(e) => setNumber(e.target.value)}
-              placeholder="Enter phone number"
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formGroupAddress">
-            <Form.Label>Your Home Address</Form.Label>
-            <Form.Control
-              required
-              type="text"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              placeholder="Enter address"
-            />
-          </Form.Group>
-          {tour.destination && (
-            <Form.Group className="mb-3" controlId="formGroupTour">
-              <Form.Label>Your Tour</Form.Label>
-              <Form.Control type="text" value={tour.destination} disabled />
-            </Form.Group>
-          )}
-          {tour.price && (
-            <Form.Group className="mb-3" controlId="formGroupPrice">
-              <Form.Label>Total Price</Form.Label>
-              <Form.Control type="number" value={tour.price} disabled />
-            </Form.Group>
-          )}
+        )}
 
-          <Button variant="primary" type="submit">
-            Add Booking
-          </Button>
-          <Button
-            variant="success"
-            className="ms-3"
-            onClick={() => history.push("/")}
-          >
-            Back Home
-          </Button>
-        </Form>
-      </Container>
-    </div>
+        <Button variant="primary" type="submit">
+          Add Booking
+        </Button>
+        <Button
+          variant="success"
+          className="ms-3"
+          onClick={() => history.push("/")}
+        >
+          Back Home
+        </Button>
+      </Form>
+    </Container>
   );
 };
 

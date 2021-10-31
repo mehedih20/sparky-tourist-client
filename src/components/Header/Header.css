@@ -1,0 +1,10 @@
+.sparky-brand {
+  font-family: "Architects Daughter", cursive;
+  font-size: 25px;
+}
+
+.sparky-nav > a {
+  margin-right: 20px;
+  font-family: "Anonymous Pro", monospace;
+  font-size: 18px;
+}
