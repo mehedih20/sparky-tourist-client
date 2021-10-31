@@ -19,8 +19,8 @@ const Header = () => {
   };
 
   return (
-    <Navbar bg="light" variant="light" expand="lg">
-      <Container className="py-3">
+    <Navbar variant="light" expand="lg" bg="light">
+      <Container className="py-2">
         <Navbar.Brand className="sparky-brand" as={Link} to="/">
           Sparky <span className="text-success">Tourist</span>
         </Navbar.Brand>

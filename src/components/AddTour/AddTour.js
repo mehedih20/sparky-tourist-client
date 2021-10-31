@@ -7,6 +7,8 @@ const AddTour = () => {
   const [tourPrice, setTourPrice] = useState("");
   const [imgUrl, setImgUrl] = useState("");
   const [tourDuration, setTourDuration] = useState("");
+  const [accomodation, setAccomodation] = useState("");
+  const [guide, setGuide] = useState("");
   const history = useHistory();
 
   const reset = () => {
@@ -25,6 +27,8 @@ const AddTour = () => {
       imgUrl,
       price,
       duration,
+      accomodation,
+      guide,
     };
     fetch("https://sheltered-bayou-10769.herokuapp.com/tours", {
       method: "POST",
@@ -45,7 +49,7 @@ const AddTour = () => {
 
   return (
     <Container className="my-5">
-      <h1 className="text-center">Add Tour</h1>
+      <h1 className="title text-secondary">Add Tour</h1>
       <Form className="w-75 mx-auto" onSubmit={handleAdd}>
         <Form.Group className="mb-3" controlId="formGroupDestination">
           <Form.Label>Destination</Form.Label>
@@ -74,13 +78,31 @@ const AddTour = () => {
             onChange={(e) => setTourDuration(e.target.value)}
           />
         </Form.Group>
-        <Form.Group className="mb-5" controlId="formGroupImgUrl">
+        <Form.Group className="mb-3" controlId="formGroupImgUrl">
           <Form.Label>ImgUrl</Form.Label>
           <Form.Control
             type="text"
             value={imgUrl}
             placeholder="Enter ImgUrl"
             onChange={(e) => setImgUrl(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formGroupAccomodation">
+          <Form.Label>Accomodation</Form.Label>
+          <Form.Control
+            type="text"
+            value={accomodation}
+            placeholder="Enter Accomodation details"
+            onChange={(e) => setAccomodation(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group className="mb-5" controlId="formGroupImgUrl">
+          <Form.Label>Guide</Form.Label>
+          <Form.Control
+            type="text"
+            value={guide}
+            placeholder="Enter guide availability"
+            onChange={(e) => setGuide(e.target.value)}
           />
         </Form.Group>
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Spinner } from "react-bootstrap";
 import { AiFillFire } from "react-icons/ai";
+import { FcCheckmark } from "react-icons/fc";
 import { useHistory } from "react-router";
 import "./Tours.css";
 
@@ -25,7 +26,7 @@ const Tours = () => {
   return (
     <section className="py-5 bg-light">
       <Container>
-        <h1 className="my-5 text-dark">Tours</h1>
+        <h1 className="title text-secondary">Tours</h1>
         <div className="pb-5">
           {isLoading ? (
             <div className="spinner-container">
@@ -36,9 +37,17 @@ const Tours = () => {
               />
             </div>
           ) : (
-            <div className="tours-container">
+            <div className="tours-container px-3">
               {tours.map((tour) => {
-                const { _id, destination, imgUrl, duration, price } = tour;
+                const {
+                  _id,
+                  destination,
+                  imgUrl,
+                  duration,
+                  price,
+                  accomodation,
+                  guide,
+                } = tour;
 
                 return (
                   <div key={_id} className="text-muted tour">
@@ -47,8 +56,14 @@ const Tours = () => {
                       <h4 className="tour-title">{destination}</h4>
                     </div>
                     <div className="p-3 text-center">
-                      <p className="fs-5">Duration: {duration} days</p>
-                      <p className="fs-3" style={{ color: "#864879" }}>
+                      <p className="fs-6">Duration: {duration} days</p>
+                      <p className="fs-6">
+                        {accomodation} <FcCheckmark className="mb-1" />
+                      </p>
+                      <p className="fs-6">
+                        {guide} <FcCheckmark className="mb-1" />
+                      </p>
+                      <p className="fs-4" style={{ color: "#864879" }}>
                         {" "}
                         {price}$
                       </p>

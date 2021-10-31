@@ -1,0 +1,38 @@
+.gallery {
+  padding: 50px 0 100px;
+  /* background-color: #e8fcc9; */
+}
+
+.gallery-carousel {
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.3);
+  width: 65%;
+}
+
+.carousel-img {
+  height: 450px;
+}
+
+@media (max-width: 995px) {
+  .gallery-carousel {
+    width: 75%;
+  }
+}
+@media (max-width: 775px) {
+  .gallery-carousel {
+    width: 85%;
+  }
+  .carousel-img {
+    height: 300px;
+  }
+  .gallery {
+    padding: 80px 0 100px;
+  }
+}
+@media (max-width: 560px) {
+  .gallery-carousel {
+    width: 90%;
+  }
+  .carousel-img {
+    height: 250px;
+  }
+}

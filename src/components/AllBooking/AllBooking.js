@@ -44,7 +44,7 @@ const AllBooking = () => {
   return (
     <div>
       <Container className="my-5">
-        <h1 className="text-center mb-5">All Bookings</h1>
+        <h1 className="title text-secondary">All Bookings</h1>
         {isLoading ? (
           <div className="spinner-container">
             <Spinner
@@ -55,6 +55,11 @@ const AllBooking = () => {
           </div>
         ) : (
           <div>
+            {allBooking.length === 0 && (
+              <p className="text-center lead text-muted">
+                There are no bookings yet!
+              </p>
+            )}
             {allBooking.map((booking) => {
               const { _id, name, email, destination, img, status, address } =
                 booking;

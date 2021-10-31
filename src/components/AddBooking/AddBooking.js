@@ -54,7 +54,7 @@ const AddBooking = () => {
 
   return (
     <Container className="my-5">
-      <h1 className="text-center">Add Booking</h1>
+      <h1 className="title text-secondary">Add Booking</h1>
       <Form className="w-75 mx-auto" onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formGroupEmail">
           <Form.Label>Email address</Form.Label>

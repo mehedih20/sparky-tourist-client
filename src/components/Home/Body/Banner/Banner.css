@@ -1,0 +1,91 @@
+.banner {
+  background-image: linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.75)
+    ),
+    url("../../../../img/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 80px 0;
+}
+
+.banner-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.banner-container h1 {
+  font-size: 60px;
+  font-family: "Merienda", cursive;
+  color: #cecece;
+}
+
+.banner-container h3 {
+  font-size: 40px;
+  font-family: "Anonymous Pro", monospace;
+  color: #acacac;
+  margin-bottom: 50px;
+}
+
+.banner-container p {
+  color: #d8d8d8;
+}
+
+.banner-container p:last-of-type {
+  margin-top: 20px;
+  font-size: 40px;
+  font-family: "Satisfy", cursive;
+}
+
+.banner-animate {
+  color: #198b6f;
+  display: inline-block;
+  align-self: center;
+  font-size: 30px;
+  padding: 10px;
+  animation: pulsate 2s infinite ease;
+}
+
+@keyframes pulsate {
+  0% {
+    color: #198b6f;
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    color: #0f498b;
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+  100% {
+    color: #198b6f;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner-container h1 {
+    font-size: 40px;
+    margin-bottom: 50px;
+  }
+
+  .banner-container h3 {
+    font-size: 25px;
+    font-family: "Anonymous Pro", monospace;
+    color: #acacac;
+    margin-bottom: 20px;
+  }
+
+  .banner-container p {
+    color: #d8d8d8;
+  }
+
+  .banner-container p:last-of-type {
+    margin-top: 20px;
+    font-size: 30px;
+    font-family: "Satisfy", cursive;
+  }
+}

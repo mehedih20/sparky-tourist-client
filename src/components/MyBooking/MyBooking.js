@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Button, Spinner, Row, Col } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
 import { useAuth } from "../../Context/authContext";
 
 const MyBooking = () => {
@@ -20,7 +20,7 @@ const MyBooking = () => {
   return (
     <div>
       <Container className="my-5">
-        <h1 className="text-center mb-5">My Booking</h1>
+        <h1 className="title text-secondary">My Booking</h1>
         {isLoading ? (
           <div className="spinner-container">
             <Spinner
@@ -31,6 +31,12 @@ const MyBooking = () => {
           </div>
         ) : (
           <div>
+            {myBooking.length === 0 && (
+              <p className="text-center lead text-muted">
+                You have done no booking yet!
+              </p>
+            )}
+
             {myBooking.map((booking) => {
               const { _id, name, email, destination, img, status, address } =
                 booking;
