@@ -15,7 +15,7 @@ const Tours = () => {
   };
 
   useEffect(() => {
-    fetch("https://sheltered-bayou-10769.herokuapp.com/tours")
+    fetch("https://sparky-tourist.onrender.com/tours")
       .then((res) => res.json())
       .then((data) => {
         setTours(data);
