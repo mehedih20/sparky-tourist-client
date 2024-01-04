@@ -30,7 +30,7 @@ const AddTour = () => {
       accomodation,
       guide,
     };
-    fetch("https://sparky-tourist.onrender.com/tours", {
+    fetch("https://sparky-tourist-server.vercel.app/tours", {
       method: "POST",
       headers: {
         "content-type": "application/json",

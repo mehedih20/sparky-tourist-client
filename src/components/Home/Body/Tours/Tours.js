@@ -15,7 +15,7 @@ const Tours = () => {
   };
 
   useEffect(() => {
-    fetch("https://sparky-tourist.onrender.com/tours")
+    fetch("https://sparky-tourist-server.vercel.app/tours")
       .then((res) => res.json())
       .then((data) => {
         setTours(data);

@@ -7,12 +7,12 @@ const MyBooking = () => {
   const [toggle, setToggle] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const { user } = useAuth();
-  const url = `https://sparky-tourist.onrender.com/bookings/${user.email}`;
+  const url = `https://sparky-tourist-server.vercel.app/bookings/${user.email}`;
 
   const handleDelete = (id) => {
     const makeSure = window.confirm("Are you sure you want to delete");
     if (makeSure) {
-      fetch(`https://sparky-tourist.onrender.com/bookings/${id}`, {
+      fetch(`https://sparky-tourist-server.vercel.app/bookings/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

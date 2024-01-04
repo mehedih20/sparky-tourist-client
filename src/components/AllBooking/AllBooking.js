@@ -7,7 +7,7 @@ const AllBooking = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const handleApprove = (id) => {
-    fetch(`https://sparky-tourist.onrender.com/bookings/${id}`, {
+    fetch(`https://sparky-tourist-server.vercel.app/bookings/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())
@@ -22,7 +22,7 @@ const AllBooking = () => {
   const handleDelete = (id) => {
     const makeSure = window.confirm("Are you sure you want to delete");
     if (makeSure) {
-      fetch(`https://sparky-tourist.onrender.com/bookings/${id}`, {
+      fetch(`https://sparky-tourist-server.vercel.app/bookings/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -35,7 +35,7 @@ const AllBooking = () => {
   };
 
   useEffect(() => {
-    fetch("https://sparky-tourist.onrender.com/bookings")
+    fetch("https://sparky-tourist-server.vercel.app/bookings")
       .then((res) => res.json())
       .then((result) => {
         setAllBooking(result);

@@ -29,7 +29,7 @@ const AddBooking = () => {
       price: tour.price,
       status: "pending",
     };
-    fetch("https://sparky-tourist.onrender.com/bookings", {
+    fetch("https://sparky-tourist-server.vercel.app/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -47,7 +47,7 @@ const AddBooking = () => {
   };
 
   useEffect(() => {
-    fetch(`https://sparky-tourist.onrender.com/tours/${id}`)
+    fetch(`https://sparky-tourist-server.vercel.app/tours/${id}`)
       .then((res) => res.json())
       .then((result) => setTour(result));
   }, []);
